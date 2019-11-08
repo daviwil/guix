@@ -16,6 +16,7 @@
 ;;; Copyright © 2018 Leo Famulari <leo@famulari.name>
 ;;; Copyright © 2018 Pierre-Antoine Rouby <contact@parouby.fr>
 ;;; Copyright © 2019 Tanguy Le Carrour <tanguy@bioneland.org>
+;;; Copyright © 2019 David Wilson <david@daviwil.com>
 ;;;
 ;;; This file is part of GNU Guix.
 ;;;
@@ -57,6 +58,7 @@
   #:use-module (gnu packages glib)
   #:use-module (gnu packages gnome)
   #:use-module (gnu packages gnupg)
+  #:use-module (gnu packages gperf)
   #:use-module (gnu packages gtk)
   #:use-module (gnu packages guile)
   #:use-module (gnu packages icu4c)
@@ -1943,5 +1945,31 @@ Telegram messenger.")
     ;; Code under tgl/ (the Telegram library) is LGPLv2.1+, but the plugin
     ;; itself is GPLv2+.
     (license license:gpl2+)))
+
+(define-public tdlib
+  (package
+    (name "tdlib")
+    (version "1.5.0")
+    (source
+     (origin
+       (method git-fetch)
+       (uri (git-reference
+             (url "https://github.com/tdlib/td")
+             (commit (string-append "v" version))))
+       (file-name (git-file-name name version))
+       (sha256
+        (base32 "1rqxdvzlryqln5jzj35cwz1fjwy4s8xq97p0wdnpzbfjpcalvrm5"))))
+    (build-system cmake-build-system)
+    (native-inputs
+     `(("gperf" ,gperf)))
+    (inputs
+     `(("zlib" ,zlib)
+       ("openssl" ,openssl)))
+    (arguments
+     `(#:tests? #f))                      ; no tests
+    (home-page "https://core.telegram.org/tdlib")
+    (synopsis "")
+    (description "")
+    (license license:boost1.0)))
 
 ;;; messaging.scm ends here
