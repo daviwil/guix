@@ -116,13 +116,13 @@ GNU_SYSTEM_MODULES =				\
   %D%/packages/code.scm				\
   %D%/packages/commencement.scm			\
   %D%/packages/compression.scm			\
-  %D%/packages/compton.scm 			\
+  %D%/packages/compton.scm			\
   %D%/packages/conky.scm			\
   %D%/packages/connman.scm			\
   %D%/packages/cook.scm				\
   %D%/packages/coq.scm				\
   %D%/packages/cpio.scm				\
-  %D%/packages/cpp.scm 				\
+  %D%/packages/cpp.scm				\
   %D%/packages/cppi.scm				\
   %D%/packages/cran.scm				\
   %D%/packages/crates-io.scm			\
@@ -265,7 +265,7 @@ GNU_SYSTEM_MODULES =				\
   %D%/packages/inkscape.scm			\
   %D%/packages/installers.scm			\
   %D%/packages/ipfs.scm			\
-  %D%/packages/irc.scm  			\
+  %D%/packages/irc.scm				\
   %D%/packages/iso-codes.scm			\
   %D%/packages/java.scm				\
   %D%/packages/java-compression.scm		\
@@ -356,7 +356,7 @@ GNU_SYSTEM_MODULES =				\
   %D%/packages/networking.scm			\
   %D%/packages/nfs.scm                          \
   %D%/packages/nickle.scm                       \
-  %D%/packages/nim.scm  			\
+  %D%/packages/nim.scm				\
   %D%/packages/ninja.scm			\
   %D%/packages/node.scm				\
   %D%/packages/noweb.scm			\
@@ -387,7 +387,7 @@ GNU_SYSTEM_MODULES =				\
   %D%/packages/perl-web.scm			\
   %D%/packages/perl6.scm			\
   %D%/packages/photo.scm			\
-  %D%/packages/phabricator.scm 			\
+  %D%/packages/phabricator.scm			\
   %D%/packages/php.scm				\
   %D%/packages/pkg-config.scm			\
   %D%/packages/plotutils.scm			\
@@ -409,6 +409,7 @@ GNU_SYSTEM_MODULES =				\
   %D%/packages/python-crypto.scm		\
   %D%/packages/python-web.scm			\
   %D%/packages/python-xyz.scm			\
+  %D%/packages/telegram.scm			\
   %D%/packages/toys.scm				\
   %D%/packages/tryton.scm			\
   %D%/packages/qt.scm				\
@@ -624,7 +625,7 @@ GNU_SYSTEM_MODULES =				\
   %D%/tests/web.scm
 
 INSTALLER_MODULES =                             \
-  %D%/installer.scm      			\
+  %D%/installer.scm				\
   %D%/installer/connman.scm			\
   %D%/installer/final.scm			\
   %D%/installer/hostname.scm			\
@@ -632,7 +633,7 @@ INSTALLER_MODULES =                             \
   %D%/installer/locale.scm			\
   %D%/installer/newt.scm			\
   %D%/installer/parted.scm			\
-  %D%/installer/record.scm		        \
+  %D%/installer/record.scm			\
   %D%/installer/services.scm			\
   %D%/installer/steps.scm			\
   %D%/installer/timezone.scm			\
@@ -640,7 +641,7 @@ INSTALLER_MODULES =                             \
   %D%/installer/utils.scm			\
 						\
   %D%/installer/newt/ethernet.scm		\
-  %D%/installer/newt/final.scm  		\
+  %D%/installer/newt/final.scm			\
   %D%/installer/newt/hostname.scm		\
   %D%/installer/newt/keymap.scm			\
   %D%/installer/newt/locale.scm			\
@@ -684,11 +685,11 @@ dist_patch_DATA =						\
   %D%/packages/patches/abiword-explictly-cast-bools.patch	\
   %D%/packages/patches/abiword-black-drawing-with-gtk322.patch	\
   %D%/packages/patches/adb-add-libraries.patch			\
-  %D%/packages/patches/aegis-constness-error.patch         	\
-  %D%/packages/patches/aegis-perl-tempdir1.patch           	\
-  %D%/packages/patches/aegis-perl-tempdir2.patch           	\
-  %D%/packages/patches/aegis-test-fixup-1.patch            	\
-  %D%/packages/patches/aegis-test-fixup-2.patch            	\
+  %D%/packages/patches/aegis-constness-error.patch		\
+  %D%/packages/patches/aegis-perl-tempdir1.patch		\
+  %D%/packages/patches/aegis-perl-tempdir2.patch		\
+  %D%/packages/patches/aegis-test-fixup-1.patch			\
+  %D%/packages/patches/aegis-test-fixup-2.patch			\
   %D%/packages/patches/aegisub-icu59-include-unistr.patch	\
   %D%/packages/patches/aegisub-boost68.patch                    \
   %D%/packages/patches/agg-am_c_prototype.patch			\
@@ -735,7 +736,7 @@ dist_patch_DATA =						\
   %D%/packages/patches/casync-renameat2-declaration.patch	\
   %D%/packages/patches/catdoc-CVE-2017-11110.patch		\
   %D%/packages/patches/cdparanoia-fpic.patch			\
-  %D%/packages/patches/cdrtools-3.01-mkisofs-isoinfo.patch 	\
+  %D%/packages/patches/cdrtools-3.01-mkisofs-isoinfo.patch	\
   %D%/packages/patches/ceph-detect-rocksdb.patch		\
   %D%/packages/patches/ceph-disable-cpu-optimizations.patch	\
   %D%/packages/patches/ceph-skip-collect-sys-info-test.patch	\
@@ -790,7 +791,7 @@ dist_patch_DATA =						\
   %D%/packages/patches/doxygen-test.patch			\
   %D%/packages/patches/dstat-fix-crash-when-specifying-delay.patch	\
   %D%/packages/patches/dstat-skip-devices-without-io.patch	\
-  %D%/packages/patches/dvd+rw-tools-add-include.patch 		\
+  %D%/packages/patches/dvd+rw-tools-add-include.patch		\
   %D%/packages/patches/einstein-build.patch			\
   %D%/packages/patches/elfutils-tests-ptrace.patch		\
   %D%/packages/patches/elixir-path-length.patch			\
@@ -900,7 +901,7 @@ dist_patch_DATA =						\
   %D%/packages/patches/glibc-allow-kernel-2.6.32.patch		\
   %D%/packages/patches/glibc-boot-2.16.0.patch			\
   %D%/packages/patches/glibc-boot-2.2.5.patch			\
-  %D%/packages/patches/glibc-bootstrap-system-2.16.0.patch 	\
+  %D%/packages/patches/glibc-bootstrap-system-2.16.0.patch	\
   %D%/packages/patches/glibc-bootstrap-system.patch		\
   %D%/packages/patches/glibc-hidden-visibility-ldconfig.patch	\
   %D%/packages/patches/glibc-hurd-magic-pid.patch		\
@@ -913,10 +914,10 @@ dist_patch_DATA =						\
   %D%/packages/patches/glibc-versioned-locpath.patch		\
   %D%/packages/patches/glibc-2.27-git-fixes.patch		\
   %D%/packages/patches/glibc-2.28-git-fixes.patch		\
-  %D%/packages/patches/glibc-2.29-git-updates.patch     	\
-  %D%/packages/patches/glibc-2.27-supported-locales.patch     	\
-  %D%/packages/patches/glibc-2.28-supported-locales.patch     	\
-  %D%/packages/patches/glibc-supported-locales.patch     	\
+  %D%/packages/patches/glibc-2.29-git-updates.patch		\
+  %D%/packages/patches/glibc-2.27-supported-locales.patch	\
+  %D%/packages/patches/glibc-2.28-supported-locales.patch	\
+  %D%/packages/patches/glibc-supported-locales.patch		\
   %D%/packages/patches/glm-restore-install-target.patch		\
   %D%/packages/patches/glusterfs-use-PATH-instead-of-hardcodes.patch		\
   %D%/packages/patches/gmp-arm-asm-nothumb.patch		\
@@ -930,8 +931,8 @@ dist_patch_DATA =						\
   %D%/packages/patches/gobject-introspection-girepository.patch	\
   %D%/packages/patches/go-skip-gc-test.patch			\
   %D%/packages/patches/gpm-glibc-2.26.patch			\
-  %D%/packages/patches/gpsbabel-minizip.patch     		\
-  %D%/packages/patches/gpsbabel-qstring.patch     		\
+  %D%/packages/patches/gpsbabel-minizip.patch			\
+  %D%/packages/patches/gpsbabel-qstring.patch			\
   %D%/packages/patches/grep-timing-sensitive-test.patch		\
   %D%/packages/patches/groovy-add-exceptionutilsgenerator.patch	\
   %D%/packages/patches/grub-efi-fat-serial-number.patch		\
@@ -959,17 +960,17 @@ dist_patch_DATA =						\
   %D%/packages/patches/handbrake-opt-in-nvenc.patch		\
   %D%/packages/patches/haskell-mode-unused-variables.patch	\
   %D%/packages/patches/haskell-mode-make-check.patch		\
-  %D%/packages/patches/hdf4-architectures.patch 		\
-  %D%/packages/patches/hdf4-reproducibility.patch 		\
-  %D%/packages/patches/hdf4-shared-fortran.patch 		\
-  %D%/packages/patches/hdf4-tirpc.patch 			\
+  %D%/packages/patches/hdf4-architectures.patch			\
+  %D%/packages/patches/hdf4-reproducibility.patch		\
+  %D%/packages/patches/hdf4-shared-fortran.patch		\
+  %D%/packages/patches/hdf4-tirpc.patch				\
   %D%/packages/patches/hdf5-config-date.patch			\
   %D%/packages/patches/hdf5-mpi-deprecations.patch		\
   %D%/packages/patches/hdf5-1.8-mpi-deprecations.patch		\
-  %D%/packages/patches/hdf-eos2-build-shared.patch 		\
+  %D%/packages/patches/hdf-eos2-build-shared.patch		\
   %D%/packages/patches/hdf-eos2-remove-gctp.patch		\
   %D%/packages/patches/hdf-eos2-fortrantests.patch		\
-  %D%/packages/patches/hdf-eos5-build-shared.patch 		\
+  %D%/packages/patches/hdf-eos5-build-shared.patch		\
   %D%/packages/patches/hdf-eos5-remove-gctp.patch		\
   %D%/packages/patches/hdf-eos5-fix-szip.patch			\
   %D%/packages/patches/hdf-eos5-fortrantests.patch		\
@@ -1032,8 +1033,8 @@ dist_patch_DATA =						\
   %D%/packages/patches/laby-make-install.patch			\
   %D%/packages/patches/lcalc-default-parameters-1.patch		\
   %D%/packages/patches/lcalc-default-parameters-2.patch		\
-  %D%/packages/patches/lcalc-lcommon-h.patch    		\
-  %D%/packages/patches/lcalc-using-namespace-std.patch 		\
+  %D%/packages/patches/lcalc-lcommon-h.patch			\
+  %D%/packages/patches/lcalc-using-namespace-std.patch		\
   %D%/packages/patches/lcms-CVE-2018-16435.patch		\
   %D%/packages/patches/ldc-bootstrap-disable-tests.patch	\
   %D%/packages/patches/ldc-disable-phobos-tests.patch		\
@@ -1076,7 +1077,7 @@ dist_patch_DATA =						\
   %D%/packages/patches/libsndfile-CVE-2017-8361-8363-8365.patch	\
   %D%/packages/patches/libsndfile-CVE-2017-8362.patch		\
   %D%/packages/patches/libsndfile-CVE-2017-12562.patch		\
-  %D%/packages/patches/libtar-CVE-2013-4420.patch 		\
+  %D%/packages/patches/libtar-CVE-2013-4420.patch		\
   %D%/packages/patches/libtheora-config-guess.patch		\
   %D%/packages/patches/libtommath-fix-linkage.patch		\
   %D%/packages/patches/libtool-skip-tests2.patch		\
@@ -1102,7 +1103,7 @@ dist_patch_DATA =						\
   %D%/packages/patches/llvm-3.5-fix-clang-build-with-gcc5.patch	\
   %D%/packages/patches/llvm-for-extempore.patch			\
   %D%/packages/patches/lm-sensors-hwmon-attrs.patch		\
-  %D%/packages/patches/lrcalc-includes.patch    		\
+  %D%/packages/patches/lrcalc-includes.patch			\
   %D%/packages/patches/lrzip-CVE-2017-8842.patch		\
   %D%/packages/patches/lua-CVE-2014-5461.patch                      \
   %D%/packages/patches/lua-pkgconfig.patch                      \
@@ -1290,7 +1291,7 @@ dist_patch_DATA =						\
   %D%/packages/patches/python-unittest2-python3-compat.patch	\
   %D%/packages/patches/python-unittest2-remove-argparse.patch	\
   %D%/packages/patches/python-waitress-fix-tests.patch		\
-  %D%/packages/patches/qemu-glibc-2.27.patch 			\
+  %D%/packages/patches/qemu-glibc-2.27.patch			\
   %D%/packages/patches/qt4-ldflags.patch			\
   %D%/packages/patches/qtbase-old-kernel.patch			\
   %D%/packages/patches/qtbase-use-TZDIR.patch			\
@@ -1343,7 +1344,7 @@ dist_patch_DATA =						\
   %D%/packages/patches/slim-login.patch				\
   %D%/packages/patches/slim-display.patch			\
   %D%/packages/patches/snappy-add-O2-flag-in-CmakeLists.txt.patch	\
-  %D%/packages/patches/sooperlooper-build-with-wx-30.patch 	\
+  %D%/packages/patches/sooperlooper-build-with-wx-30.patch	\
   %D%/packages/patches/soundconverter-remove-gconf-dependency.patch	\
   %D%/packages/patches/steghide-fixes.patch			\
   %D%/packages/patches/streamlink-update-test.patch		\
@@ -1358,8 +1359,8 @@ dist_patch_DATA =						\
   %D%/packages/patches/swish-e-format-security.patch		\
   %D%/packages/patches/symmetrica-bruch.patch			\
   %D%/packages/patches/symmetrica-int32.patch			\
-  %D%/packages/patches/symmetrica-return_values.patch 		\
-  %D%/packages/patches/symmetrica-sort_sum_rename.patch 	\
+  %D%/packages/patches/symmetrica-return_values.patch		\
+  %D%/packages/patches/symmetrica-sort_sum_rename.patch		\
   %D%/packages/patches/t1lib-CVE-2010-2642.patch		\
   %D%/packages/patches/t1lib-CVE-2011-0764.patch		\
   %D%/packages/patches/t1lib-CVE-2011-1552+.patch		\
@@ -1418,7 +1419,7 @@ dist_patch_DATA =						\
   %D%/packages/patches/vboot-utils-skip-test-workbuf.patch	\
   %D%/packages/patches/vinagre-newer-freerdp.patch             \
   %D%/packages/patches/vinagre-newer-rdp-parameters.patch      \
-  %D%/packages/patches/virglrenderer-CVE-2017-6386.patch 	\
+  %D%/packages/patches/virglrenderer-CVE-2017-6386.patch	\
   %D%/packages/patches/vlc-fix-test_libvlc_slaves.patch \
   %D%/packages/patches/vorbis-tools-CVE-2014-9638+CVE-2014-9639.patch		\
   %D%/packages/patches/vorbis-tools-CVE-2014-9640.patch		\
@@ -1444,9 +1445,9 @@ dist_patch_DATA =						\
   %D%/packages/patches/xf86-video-ark-remove-mibstore.patch	\
   %D%/packages/patches/xf86-video-geode-glibc-2.20.patch	\
   %D%/packages/patches/xf86-video-mach64-glibc-2.20.patch	\
-  %D%/packages/patches/xf86-video-savage-xorg-compat.patch 	\
+  %D%/packages/patches/xf86-video-savage-xorg-compat.patch	\
   %D%/packages/patches/xf86-video-siliconmotion-fix-ftbfs.patch \
-  %D%/packages/patches/xf86-video-sis-xorg-compat.patch 	\
+  %D%/packages/patches/xf86-video-sis-xorg-compat.patch		\
   %D%/packages/patches/xf86-video-tga-remove-mibstore.patch	\
   %D%/packages/patches/xf86-video-voodoo-pcitag.patch		\
   %D%/packages/patches/xfce4-panel-plugins.patch		\
