@@ -102,6 +102,7 @@
   #:use-module (gnu packages ncurses)
   #:use-module (gnu packages python)
   #:use-module (gnu packages python-xyz)
+  #:use-module (gnu packages telegram)
   #:use-module (gnu packages tex)
   #:use-module (gnu packages texinfo)
   #:use-module (gnu packages tcl)
@@ -19895,3 +19896,81 @@ Google guidelines.")
       (description "Helm Fish Completion is a Helm interface for Emacs
 fish-completion.  It can be used in both Eshell and M-x shell.")
       (license license:gpl3+))))
+
+(define-public emacs-telega
+  (package
+    (name "emacs-telega")
+    (version "0.4.4")
+    (home-page "https://github.com/zevlg/telega.el")
+    (source
+     (origin
+       (method git-fetch)
+       (uri (git-reference
+             (url home-page)
+             (commit version)))
+       (file-name (git-file-name name version))
+       (sha256
+        (base32 "0s2a9hwa775qyfad1zikah0vnpn9mbydzf8ipsyabns2hhjzf225"))))
+    (build-system emacs-build-system)
+    (arguments
+     `(#:tests? #f ;no tests
+       #:phases
+       (modify-phases %standard-phases
+         (add-after 'unpack 'enter-server-dir
+           (lambda _ (chdir "server") #t))
+         (add-after 'enter-server-dir 'build-server
+           (lambda* (#:key inputs outputs #:allow-other-keys)
+             (let* ((out (assoc-ref outputs "out"))
+                    (server-dir (string-append out
+                                               "/share/emacs/site-lisp/guix.d/telega-"
+                                               ,version
+                                               "/server")))
+               (invoke "make"
+                       (string-append "LIBS_PREFIX=\""
+                                      (assoc-ref inputs "tdlib")
+                                      "\" ")
+                       "CC=\"gcc\"")
+               (mkdir-p server-dir)
+               (copy-file "telega-server" (string-append server-dir
+                                                         "/telega-server")))))
+         (add-after 'build-server 'enter-lisp-dir
+           (lambda _ (chdir "../") #t))
+         (add-after 'enter-lisp-dir 'copy-etc-dir
+           (lambda* (#:key outputs #:allow-other-keys)
+             (let* ((out (assoc-ref outputs "out"))
+                    (etc-dir (string-append out
+                                            "/share/emacs/site-lisp/guix.d/telega-"
+                                            ,version
+                                            "/etc")))
+               (mkdir-p etc-dir)
+               (copy-recursively "etc" etc-dir))))
+         (add-after 'copy-etc-dir 'add-server-path
+           (lambda* (#:key outputs #:allow-other-keys)
+             (let* ((out (assoc-ref outputs "out"))
+                    (server-dir (string-append out
+                                               "/share/emacs/site-lisp/guix.d/telega-"
+                                               ,version
+                                               "/server")))
+               ;; File is read-only.
+               (chmod "telega-server.el" #o644)
+               (emacs-substitute-sexps "telega-server.el"
+                 ("(exec-path"
+                  `(cons ,server-dir exec-path)))))))))
+    (propagated-inputs
+     `(("emacs-visual-fill-column" ,emacs-visual-fill-column)))
+    (inputs
+     `(("tdlib" ,tdlib)))
+    (synopsis "Unofficial Telegram client for Emacs")
+    (description
+     "telega.el is a full-featured Telegram client for GNU Emacs.  It uses the
+official TDLib library to connect to the Telegram network and provides many of
+the platform's features:
+
+@itemize
+@item Direct messaging with other users
+@item Listing and joining group chats
+@item Activity notifications
+@item Photos, emojis, stickers, and GIFs
+@item ...and many more
+@end itemize\n")
+    (license license:gpl3+)))
